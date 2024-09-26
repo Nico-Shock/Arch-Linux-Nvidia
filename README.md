@@ -94,7 +94,7 @@
    ```
 5. 
    ```
-   pacstrap /mnt base base-devel linux linux-firmware nano
+   pacstrap /mnt base base-devel linux linux-firmware nano networkmanager grub
    ```
 
 ## 8. Configure Fstab
@@ -110,61 +110,59 @@
    ```
    arch-chroot /mnt /bin/bash
    ```
+   
+   ```
 2. 
-   ```
-   pacman -S networkmanager grub
-   ```
-3. 
    ```
    systemctl enable NetworkManager
    ```
-4. 
+3. 
    ```
    grub-install /dev/sda
    ```
-5. 
+4. 
    ```
    grub-mkconfig -o /boot/grub/grub.cfg
    ```
-6. 
+5. 
    ```
    passwd
    ```
-7. 
+6. 
    ```
    nano /etc/locale.gen
    ```
    - Search for the language -> remove "#" from UTF and ISO.
 
-8. 
+7. 
    ```
    locale-gen
    ```
-9. 
+8. 
    ```
    nano /etc/locale.conf
    ```
    - `LANG=language` (name of the previously configured language).
 
-10. 
+9. 
     ```
     nano /etc/hostname
     ```
     - `type your pc name here`.
 
-11. 
+10. 
     ```
     ln -sf /usr/share/zoneinfo/ (TAB 1)
     ```
-12. 
+11. 
     ```
     ln -sf /usr/share/zoneinfo/region (TAB 2)
     ```
-13. 
+12. 
     ```
     ln -sf /usr/share/zoneinfo/region/city /etc/localtime
     ```
-14. 
+13. 
     ```
     exit
     ```

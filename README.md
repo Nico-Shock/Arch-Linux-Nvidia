@@ -314,7 +314,7 @@
   
 3.  
    ```
-   sudo pacman -S flatpak dolphin mpv git fastfetch wget gedit linux-zen fzf htop thermald zram-generator timeshift
+   sudo pacman -S flatpak dolphin mpv git fastfetch wget gedit fzf htop thermald zram-generator timeshift
 4. 
    ```
    git clone https://aur.archlinux.org/yay.git

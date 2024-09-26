@@ -110,8 +110,6 @@
    ```
    arch-chroot /mnt /bin/bash
    ```
-   
-   ```
 2. 
    ```
    systemctl enable NetworkManager

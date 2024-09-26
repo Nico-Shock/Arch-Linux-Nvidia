@@ -327,9 +327,3 @@
    ```
    makepkg -si
    ```
-
-
-5. Install Flatpak applications:
-   ```
-   flatpak install flathub org.winehq.Wine io.missioncenter.MissionCenter
-   ```

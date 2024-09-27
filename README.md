@@ -63,7 +63,7 @@
    - Write -> yes
    - Quit
 
-## 6. Create Partitions
+## 6. Format Partitions
 
 1. 
    ```

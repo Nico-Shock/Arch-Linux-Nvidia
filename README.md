@@ -180,19 +180,23 @@
 
 1. 
    ```
-   useradd -m -G wheel -s /bin/bash username
+   loadkeys de
    ```
 2. 
    ```
-   passwd username
+   useradd -m -G wheel -s /bin/bash username
    ```
 3. 
+   ```
+   passwd username
+   ```
+4. 
    ```
    nano /etc/sudoers
    ```
    - Remove "#" from "# %wheel ALL=(ALL) ALL".
 
-4. 
+5. 
    ```
    logout
    ```

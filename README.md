@@ -31,7 +31,7 @@
    exit
    ```
 
-## 4. Optional: Connect to SSH
+## Optional: Connect to SSH
 
 1. 
    ```
@@ -46,7 +46,7 @@
    ip addr
    ```
 
-## 5. Partition the Disk
+## 4. Partition the Disk
 
 1. 
    ```
@@ -63,7 +63,7 @@
    - Write -> yes
    - Quit
 
-## 6. Format Partitions
+## 5. Format Partitions
 
 1. 
    ```
@@ -74,7 +74,7 @@
    mkfs.ext4 /dev/sda2
    ```
 
-## 7. Install Linux Base System
+## 6. Install Linux Base System
 
 1. 
    ```
@@ -97,14 +97,14 @@
    pacstrap /mnt base base-devel linux linux-firmware nano networkmanager grub
    ```
 
-## 8. Configure Fstab
+## 7. Configure Fstab
 
 1. 
    ```
    genfstab -U /mnt >> /mnt/etc/fstab
    ```
 
-## 9. Configure Arch
+## 8. Install Grub Bootloader
 
 1. 
    ```
@@ -112,55 +112,61 @@
    ```
 2. 
    ```
-   systemctl enable NetworkManager
+   grub-install /dev/sda
    ```
 3. 
    ```
-   grub-install /dev/sda
-   ```
-4. 
-   ```
    grub-mkconfig -o /boot/grub/grub.cfg
+
+## 9. Configure Arch
+
+if not done already: 
    ```
-5. 
+   arch-chroot /mnt /bin/bash
+   ```
+1. 
+   ```
+   systemctl enable NetworkManager
+   ```
+2. 
    ```
    passwd
    ```
-6. 
+3. 
    ```
    nano /etc/locale.gen
    ```
    - Search for the language -> remove "#" from UTF and ISO.
 
-7. 
+4. 
    ```
    locale-gen
    ```
-8. 
+5. 
    ```
    nano /etc/locale.conf
    ```
    - `LANG=language` (name of the previously configured language).
 
-9. 
+6. 
     ```
     nano /etc/hostname
     ```
     - `type your pc name here`.
 
-10. 
+7. 
     ```
     ln -sf /usr/share/zoneinfo/ (TAB 1)
     ```
-11. 
+8. 
     ```
     ln -sf /usr/share/zoneinfo/region (TAB 2)
     ```
-12. 
+9. 
     ```
     ln -sf /usr/share/zoneinfo/region/city /etc/localtime
     ```
-13. 
+10. 
     ```
     exit
     ```
@@ -201,7 +207,7 @@
    logout
    ```
 
-## 12. Optional: Set Up SSH
+## Optional: Set Up SSH
 
 1. 
    ```
@@ -216,7 +222,7 @@
    ip addr
    ```
 
-## 13. Install GUI
+## 12. Install GUI
 
 ### Install Xorg
 
@@ -292,7 +298,7 @@
    sudo reboot
    ```
 
-## 14. Change Keyboard Layout
+## 13. Change Keyboard Layout
 
 1. 
    ```
@@ -307,7 +313,7 @@
    sudo reboot
    ```
 
-## 15. Finalize Build
+## 14. Finalize Build
 
 1. Install Terminal via Discover/Software.
 2. 

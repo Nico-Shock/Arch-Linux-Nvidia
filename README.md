@@ -84,7 +84,7 @@ Optional Swap Partition: New -> Half of Ram or 8GB if you have 16GB or more Ram 
    ```
 2. 
    ```
-   mkfs.ext4 /dev/sda2
+   mkfs.ext4 /dev/sda2 (sda3 on Swap Partition)
    ```
 
 ### UEFI:
@@ -94,7 +94,7 @@ Optional Swap Partition: New -> Half of Ram or 8GB if you have 16GB or more Ram 
    ```
 2. 
    ```
-   mkfs.ext4 /dev/sda2
+   mkfs.ext4 /dev/sda2 (sda3 on Swap Partition)
    ```
 
 ### Optional Swap Parition Lagacy/UEFI:
@@ -103,11 +103,11 @@ Otional Swap:
 
 1. 
    ```
-   mkswap /dev/sda3
+   mkswap /dev/sda2
    ```
 2. 
    ```
-   swapon /dev/sda3
+   swapon /dev/sda2
    ```
 
 ## 6. Install Linux Base System

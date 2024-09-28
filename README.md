@@ -45,6 +45,11 @@
    ```
    ip addr
    ```
+host:   
+3. 
+   ```
+   ssh root@ipadress
+   ```
 
 ## 4. Partition the Disk
 
@@ -285,6 +290,11 @@ if not done already:
 3. 
    ```
    ip addr
+   ```
+host:   
+3. 
+   ```
+   ssh yourusername@ipadress
    ```
 
 ## 12. Install GUI

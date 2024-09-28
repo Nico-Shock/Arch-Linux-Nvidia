@@ -84,7 +84,7 @@ Optional Swap Partition: New -> Half of Ram or 8GB if you have 16GB or more Ram 
    ```
 2. 
    ```
-   mkfs.ext4 /dev/sda2 (sda3 on Swap Partition)
+   mkfs.ext4 /dev/sda3 (sda2 without Swap Partition)
    ```
 
 ### UEFI:
@@ -94,7 +94,7 @@ Optional Swap Partition: New -> Half of Ram or 8GB if you have 16GB or more Ram 
    ```
 2. 
    ```
-   mkfs.ext4 /dev/sda2 (sda3 on Swap Partition)
+   mkfs.ext4 /dev/sda3 (sda2 without Swap Partition)
    ```
 
 ### Optional Swap Parition Lagacy/UEFI:

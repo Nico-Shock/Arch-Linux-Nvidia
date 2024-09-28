@@ -45,8 +45,8 @@
    ```
    ip addr
    ```
-host:   
-3. 
+   host:   
+   4. 
    ```
    ssh root@ipadress
    ```
@@ -291,8 +291,8 @@ if not done already:
    ```
    ip addr
    ```
-host:   
-3. 
+   host:   
+   4. 
    ```
    ssh yourusername@ipadress
    ```

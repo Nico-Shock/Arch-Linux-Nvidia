@@ -56,17 +56,28 @@
    ```
    cfdisk /dev/sda
    ```
+    
 ### CSM/Lagacy:
 3. - Choose: `dos`
    - New -> 512M -> Primary -> Press: B -> Bootable
    - New -> Everything -> Primary
    - Write -> yes
    - Quit
-  
-  
+
+Optional Swap Partition: New -> Half of Ram or 8GB if you have 16GB or more Ram
+
+  ### UEFI: 
+   - Choose `gpt`
+   - New -> 512m -> Type -> BIOS Boot
+   - New -> Everything -> Linux Filesystem
+   - Write -> yes
+   - Quit
+
+Optional Swap Partition: New -> Half of Ram or 8GB if you have 16GB or more Ram -> Linux Swap 
 
 ## 5. Format Partitions
 
+### CSM/Lagacy:
 1. 
    ```
    mkfs.ext4 /dev/sda1
@@ -74,6 +85,29 @@
 2. 
    ```
    mkfs.ext4 /dev/sda2
+   ```
+
+### UEFI:
+1. 
+   ```
+   mkfs.fat -F32 /dev/sda1
+   ```
+2. 
+   ```
+   mkfs.ext4 /dev/sda2
+   ```
+
+### Optional Swap Parition Lagacy/UEFI:
+
+Otional Swap:
+
+1. 
+   ```
+   mkswap /dev/sda3
+   ```
+2. 
+   ```
+   swapon /dev/sda3
    ```
 
 ## 6. Install Linux Base System

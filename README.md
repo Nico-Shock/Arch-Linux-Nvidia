@@ -45,7 +45,7 @@
    ```
    ip addr
    ``` 
- 4.
+4.
    ```
    ssh root@ipadress
    ```
@@ -290,7 +290,7 @@ if not done already:
    ```
    ip addr
    ```
- 4.
+4.
    ```
    ssh root@ipadress
    ```

@@ -68,7 +68,7 @@ Optional Swap Partition: New -> Half of Ram or 8GB if you have 16GB or more Ram
 
   ### UEFI: 
    - Choose `gpt`
-   - New -> 512m -> Type -> BIOS Boot
+   - New -> 512m -> Type -> EFI System
    - New -> Everything -> Linux Filesystem
    - Write -> yes
    - Quit
@@ -112,9 +112,11 @@ Otional Swap:
 
 ## 6. Install Linux Base System
 
+### CSM/Lagacy:
+
 1. 
    ```
-   mount /dev/sda2 /mnt
+   mount /dev/sda3 /mnt
    ```
 2. 
    ```
@@ -131,6 +133,33 @@ Otional Swap:
 5. 
    ```
    pacstrap /mnt base base-devel linux linux-firmware nano networkmanager grub
+   ```
+   
+### UEFI:
+
+1. 
+   ```
+   mount /dev/sda3 /mnt
+   ```
+2. 
+   ```
+   mkdir /mnt/boot
+   ```
+ 2. 
+   ```
+   mkdir /mnt/boot/efi
+   ```  
+3. 
+   ```
+   mount /dev/sda1 /mnt/boot/efi
+   ```
+4. 
+   ```
+   lsblk
+   ```
+5. 
+   ```
+   pacstrap /mnt base base-devel linux linux-firmware nano networkmanager grub efibootmgr
    ```
 
 ## 7. Configure Fstab

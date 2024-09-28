@@ -186,6 +186,7 @@ Otional Swap:
 3. 
    ```
    grub-mkconfig -o /boot/grub/grub.cfg
+   ```
 
 ## 9. Configure Arch
 
@@ -397,7 +398,7 @@ if not done already:
   
 3.  
    ```
-   sudo pacman -S flatpak dolphin mpv git fastfetch wget gedit fzf htop thermald zram-generator timeshift
+   sudo pacman -S flatpak dolphin mpv git fastfetch wget gedit fzf thermald zram-generator
 4. 
    ```
    git clone https://aur.archlinux.org/yay.git

@@ -56,12 +56,14 @@
    ```
    cfdisk /dev/sda
    ```
-
-3. - Choose: `dos` or `gpt`
+### CSM/Lagacy:
+3. - Choose: `dos`
    - New -> 512M -> Primary -> Press: B -> Bootable
    - New -> Everything -> Primary
    - Write -> yes
    - Quit
+  
+  
 
 ## 5. Format Partitions
 

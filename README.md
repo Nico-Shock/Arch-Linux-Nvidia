@@ -44,9 +44,8 @@
 3. 
    ```
    ip addr
-   ```
-   host:   
-   4. 
+   ``` 
+ 4.
    ```
    ssh root@ipadress
    ```
@@ -291,10 +290,9 @@ if not done already:
    ```
    ip addr
    ```
-   host:   
-   4. 
+ 4.
    ```
-   ssh yourusername@ipadress
+   ssh root@ipadress
    ```
 
 ## 12. Install GUI

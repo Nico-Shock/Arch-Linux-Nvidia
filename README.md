@@ -149,19 +149,19 @@ Otional Swap:
    ```
    mkdir /mnt/boot
    ```
- 2. 
+3. 
    ```
    mkdir /mnt/boot/efi
    ```  
-3. 
+4. 
    ```
    mount /dev/sda1 /mnt/boot/efi
    ```
-4. 
+5. 
    ```
    lsblk
    ```
-5. 
+6. 
    ```
    pacstrap /mnt base base-devel linux linux-firmware nano networkmanager grub efibootmgr
    ```

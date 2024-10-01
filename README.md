@@ -326,23 +326,23 @@ if not done already:
    ```
    gnome
    ```
-- For KDE Plasma:
+- KDE Plasma:
    ```
    plasma
    ```
-- For XFCE:
+- XFCE:
    ```
   xfce4
    ```
-- For Cinnamon:
+- Cinnamon:
    ```
    cinnamon
    ```
-- For Deepin:
+- Deepin:
    ```
    deepin 
    ```
-- For Budgie:
+- Budgie:
    ```
    budgie-desktop
    ```

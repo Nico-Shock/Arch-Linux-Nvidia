@@ -185,6 +185,9 @@ title Arch
 Linux /vmlinux-linux
 initrd /initramfs-linux.img
 ```
+
+## 12. Setup Nvidia Driver
+
 3. 
    ```
     sudo pacman -S nvidia-dkms libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
@@ -198,7 +201,7 @@ initrd /initramfs-linux.img
    echo "Options root=PARTUUID=$(blkid -s PARTUUID -o value /dev/sda3) rw" >> /boot/loader/entries
    ```
 
-## 12. Configure Arch
+## 13. Configure Arch
 
 1. 
    ```
@@ -251,7 +254,7 @@ initrd /initramfs-linux.img
     exit
     ```
 
-## 13. Finish Installation 
+## 14. Finish Installation 
 
 1. 
    ```
@@ -262,7 +265,7 @@ initrd /initramfs-linux.img
    reboot
    ```
 
-## 14. Set Up a New User
+## 15. Set Up a New User
 
 1. 
    ```
@@ -307,7 +310,7 @@ initrd /initramfs-linux.img
    ssh root@ipadress
    ```
 
-## 15. Install GUI
+## 16. Install GUI
 ### Install Xorg & Desktop Enviroment & Display Manager
 
 1. 
@@ -415,7 +418,7 @@ Exec=/usr/bin/mkinitcpio -P
    sudo reboot
    ```
 
-## 16. Change Keyboard Layout
+## 17. Change Keyboard Layout
 
 1. 
    ```
@@ -430,7 +433,7 @@ Exec=/usr/bin/mkinitcpio -P
    sudo reboot
    ```
 
-## 17. Finalize Build
+## 18. Finalize Build
 
 1. Install Terminal via Discover/Software. (only if you doent installed "konsole" or "console" in the insterllation process)
 

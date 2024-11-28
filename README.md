@@ -153,18 +153,18 @@ Otional Swap:
    ```
    pacstrap /mnt base base-devel linux linux-firmware
    ```
-
-## 7. Install Required Packages
-
-   ```
-1. sudo pacman -S networkmanager dhcpcd nano
-   ```
-
-## 8. Configure Fstab
+   
+## 7. Configure Fstab
 
 1. 
    ```
    genfstab -U /mnt >> /mnt/etc/fstab
+   ```
+   
+## 8. Install Required Packages
+
+   ```
+1. sudo pacman -S networkmanager dhcpcd nano
    ```
 
 ## 9. Using the installed root system

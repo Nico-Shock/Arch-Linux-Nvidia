@@ -198,7 +198,7 @@ initrd /initramfs-linux.img
 
 3. 
    ```
-   echo "Options root=PARTUUID=$(blkid -s PARTUUID -o value /dev/sda3) rw" >> /boot/loader/entries
+   echo "Options root=PARTUUID=$(blkid -s PARTUUID -o value /dev/sda3) rw" >> /boot/loader/entries/arch.conf
    ```
 
 ## 13. Configure Arch

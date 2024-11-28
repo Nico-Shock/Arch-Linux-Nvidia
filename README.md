@@ -168,7 +168,9 @@ Otional Swap:
 
 ## 7. Install Required Packages
 
+```
 1. sudo pacman -S networkmanager dhcpcd nano
+```
 
 ## 8. Configure Fstab
 

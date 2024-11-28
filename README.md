@@ -189,8 +189,11 @@ initrd /initramfs-linux.img
    ```
     sudo pacman -S nvidia-dkms libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
    ```
-
 4. 
+   ```
+   sudo pacman -S linux-headers
+   ```
+5. 
    ```
    echo "Options root=PARTUUID=$(blkid -s PARTUUID -o value /dev/sda3) rw" >> /boot/loader/entries
    ```
@@ -325,10 +328,6 @@ initrd /initramfs-linux.img
    sudo pacman -S flatpak dolphin mpv git fastfetch wget gedit fzf thermald zram-generator konsole plasma sddm xorg xorg-server
    ```
 2. 
-   ```
-   sudo pacman -S linux-headers
-   ```
-3. 
    ```
    sudo nano /etc/mkinitcpio.conf
    ```

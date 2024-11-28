@@ -160,18 +160,18 @@ Otional Swap:
    ```
    genfstab -U /mnt >> /mnt/etc/fstab
    ```
-   
-## 8. Install Required Packages
 
-   ```
-1. sudo pacman -S networkmanager dhcpcd nano
-   ```
-
-## 9. Using the installed root system
+## 8. Using the installed root system
 
 1. 
    ```
    arch-chroot /mnt /bin/bash
+   ```
+   
+## 9. Install Required Packages
+
+   ```
+1. sudo pacman -S networkmanager dhcpcd nano
    ```
 
 ## 10. Install Bootloader

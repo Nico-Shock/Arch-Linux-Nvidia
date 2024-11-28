@@ -200,7 +200,7 @@ initrd /initramfs-linux.img
 
 ## 12. Configure Arch
 
- 1. 
+1. 
    ```
    sudo systemctl enable dhcpcd@enp56s0
    ```

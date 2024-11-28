@@ -167,8 +167,18 @@ Otional Swap:
    ```
    sudo pacman -Sy
    ```
+## 11. Setup Nvidia Driver
 
-## 11. Install Bootloader
+1. 
+   ```
+    sudo pacman -S nvidia-dkms libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
+   ```
+2. 
+   ```
+   sudo pacman -S linux-headers
+   ```
+   
+## 12. Install Bootloader
 
 1. 
    ```
@@ -186,17 +196,7 @@ Linux /vmlinux-linux
 initrd /initramfs-linux.img
 ```
 
-## 12. Setup Nvidia Driver
-
 3. 
-   ```
-    sudo pacman -S nvidia-dkms libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
-   ```
-4. 
-   ```
-   sudo pacman -S linux-headers
-   ```
-5. 
    ```
    echo "Options root=PARTUUID=$(blkid -s PARTUUID -o value /dev/sda3) rw" >> /boot/loader/entries
    ```

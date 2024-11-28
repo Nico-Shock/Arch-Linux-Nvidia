@@ -116,27 +116,6 @@ Otional Swap:
 
 ## 6. Install Linux Base System
 
-### CSM/Lagacy:
-
-1. 
-   ```
-   mount /dev/sda3 /mnt
-   ```
-2. 
-   ```
-   mkdir /mnt/boot
-   ```
-3. 
-   ```
-   mount /dev/sda1 /mnt/boot
-   ```
-4. 
-   ```
-   pacstrap /mnt base base-devel linux linux-firmware
-   ```
-   
-### UEFI:
-
 1. 
    ```
    mount /dev/sda3 /mnt

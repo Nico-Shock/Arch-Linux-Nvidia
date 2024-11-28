@@ -173,70 +173,104 @@ Otional Swap:
    genfstab -U /mnt >> /mnt/etc/fstab
    ```
 
-## 8. Install Grub Bootloader
+## 7. Using the installed root system
 
 1. 
    ```
    arch-chroot /mnt /bin/bash
    ```
+
+## 8. Install Bootloader
+
+1. 
+   ```
+   bootctl install
+   ```
 2. 
    ```
-   grub-install /dev/sda
+   nano /boot/loader/entries/arch.conf (name it what ever you want)
    ```
+- paste this into the file:
+
+```
+title Arch
+Linux /vmlinux-linux
+initrd /initramfs-linux.img
+```
+
 3. 
    ```
-   grub-mkconfig -o /boot/grub/grub.cfg
+   echo "Options root=PARTUUID=$(blkid -s PARTUUID -o value /dev/sda3) rw" >> /boot/loader/entries
    ```
 
 ## 9. Configure Arch
 
-if not done already: 
-   ```
-   arch-chroot /mnt /bin/bash
-   ```
 1. 
+   ```
+   sudo pacman -S networkmanager dhcpcd
+   ```
+ 2. 
+   ```
+   sudo systemctl enable dhcpcd@enp56s0
+   ```
+3. 
+   ```
+   sudo systemctl enable NetworkManager
+   ```
+4. 
+   ```
+   sudo nano /etc/pacman.conf
+   ```
+   
+- search "multilib" -> remove "#" -> normal multilib not like multilib-testing + remove "#" -> include
+
+5. 
+   ```
+   sudo pacman -Sy
+   ```
+6. 
    ```
    systemctl enable NetworkManager
    ```
-2. 
+7. 
    ```
    passwd
    ```
-3. 
+8. 
    ```
    nano /etc/locale.gen
    ```
    - Search for the language -> remove "#" from UTF and ISO.
 
-4. 
+9. 
    ```
    locale-gen
    ```
-5. 
+10. 
    ```
    nano /etc/locale.conf
    ```
    - `LANG=language` (name of the previously configured language).
 
-6. 
+11. 
     ```
     nano /etc/hostname
     ```
     - `type your pc name here`.
 
-7. 
+12. 
     ```
     ln -sf /usr/share/zoneinfo/ (TAB 1)
     ```
-8. 
+13. 
     ```
     ln -sf /usr/share/zoneinfo/region (TAB 2)
     ```
-9. 
+14. 
     ```
     ln -sf /usr/share/zoneinfo/region/city /etc/localtime
     ```
-10. 
+15. 
     ```
     exit
     ```
@@ -271,6 +305,7 @@ if not done already:
    nano /etc/sudoers
    ```
    - Remove "#" from "# %wheel ALL=(ALL) ALL".
+   - Add "Defaults rootpw" to use the root password for the sudoers
 
 5. 
    ```
@@ -298,27 +333,34 @@ if not done already:
 
 ## 12. Install GUI
 
-### Install Xorg
+### Install Xorg & Nvida Packages & Desktop Enviroment & Display Manager
 
 1. 
    ```
-   sudo pacman -S xorg xorg-server
+   sudo pacman -S xorg xorg-server nvidia-dkms libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
    ```
-
-### Graphics Drivers
-
-- NVIDIA:
+- example for a GUI: 
    ```
-   nvidia nvidia-utils
+   sudo pacman -S plasma sddm
    ```
-- Intel:
+   
+- example for other recommended packages:
    ```
-   xf86-video-intel
+   sudo pacman -S flatpak dolphin mpv git fastfetch wget gedit fzf thermald zram-generator konsole
    ```
-- AMD:
+- example for all packages:
    ```
-   xf86-video-amdgpu
+   sudo pacman -S flatpak dolphin mpv git fastfetch wget gedit fzf thermald zram-generator konsole plasma sddm xorg xorg-server nvidia-dkms libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
    ```
+2. 
+   ```
+   sudo pacman -S linux-headers
+   ```
+3. 
+   ```
+   sudo nano /etc/mkinitcpio.conf
+   ```
+add this to "MODULES=()" -> `nvidia nvidia-modeset nvidia_uvm nvidia_drm`
 
 ### Desktop Environments
 
@@ -362,12 +404,42 @@ if not done already:
    lightdm lightdm-gtk-greeter
    ```
 
-2. Enable the display manager:
+1. Enable the display manager:
    ```
    sudo systemctl enable gdm
    ```
 
-3. Reboot the system:
+### Configure Nvidia
+   ```
+   sudo nano /boot/loader/entries/arch.conf
+   ```
+
+- add this beside rw -> nvidia-drm.modeset=1
+
+```
+sudo mkdir /etc/pacman.d/hooks
+```
+
+```
+sudo nano /etc/pacman.d/hooks/nvidia.hook
+```
+
+- add this to the file:
+```
+[Trigger]
+Operation=Install
+Operation=Upgrade
+Operation=Remove
+Type=Package
+Target=nvidia
+
+[Action]
+Depends=mkinitcpio
+When=PostTransaction
+Exec=/usr/bin/mkinitcpio -P
+```
+
+2. Reboot system:
    ```
    sudo reboot
    ```
@@ -389,23 +461,33 @@ if not done already:
 
 ## 14. Finalize Build
 
-1. Install Terminal via Discover/Software.
+1. Install Terminal via Discover/Software. (only if you doent installed "konsole" or "console" in the insterllation process)
+
 2. 
    ```
    sudo nano /etc/pacman.conf
    ```
    - Remove "#" from `Parallel downloads = 5/10/20`.
-  
-3.  
-   ```
-   sudo pacman -S flatpak dolphin mpv git fastfetch wget gedit fzf thermald zram-generator
-4. 
+3. 
    ```
    git clone https://aur.archlinux.org/yay.git
    ```
     
    ```
    cd yay
+   ```
+    
+   ```
+   makepkg -si
+   ```
+
+4. 
+   ```
+   git clone https://aur.archlinux.org/paru.git
+   ```
+    
+   ```
+   cd paru
    ```
     
    ```

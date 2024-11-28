@@ -209,72 +209,64 @@ initrd /initramfs-linux.img
 
 ## 10. Configure Arch
 
-1. 
-   ```
-   sudo pacman -S networkmanager dhcpcd
-   ```
- 2. 
+ 1. 
    ```
    sudo systemctl enable dhcpcd@enp56s0
    ```
-3. 
+2. 
    ```
    sudo systemctl enable NetworkManager
    ```
-4. 
+3. 
    ```
    sudo nano /etc/pacman.conf
    ```
    
 - search "multilib" -> remove "#" -> normal multilib not like multilib-testing + remove "#" -> include
 
-5. 
+4. 
    ```
    sudo pacman -Sy
    ```
-6. 
-   ```
-   systemctl enable NetworkManager
-   ```
-7. 
+5. 
    ```
    passwd
    ```
-8. 
+6. 
    ```
    nano /etc/locale.gen
    ```
    - Search for the language -> remove "#" from UTF and ISO.
 
-9. 
+7. 
    ```
    locale-gen
    ```
-10. 
+8. 
    ```
    nano /etc/locale.conf
    ```
    - `LANG=language` (name of the previously configured language).
 
-11. 
+9. 
     ```
     nano /etc/hostname
     ```
     - `type your pc name here`.
 
-12. 
+10. 
     ```
     ln -sf /usr/share/zoneinfo/ (TAB 1)
     ```
-13. 
+11. 
     ```
     ln -sf /usr/share/zoneinfo/region (TAB 2)
     ```
-14. 
+12. 
     ```
     ln -sf /usr/share/zoneinfo/region/city /etc/localtime
     ```
-15. 
+13. 
     ```
     exit
     ```

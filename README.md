@@ -170,6 +170,10 @@ title Arch
 Linux /vmlinux-linux
 initrd /initramfs-linux.img
 ```
+3. 
+   ```
+    sudo pacman -S nvidia-dkms libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
+   ```
 
 3. 
    ```
@@ -297,12 +301,11 @@ initrd /initramfs-linux.img
    ```
 
 ## 13. Install GUI
-
-### Install Xorg & Nvida Packages & Desktop Enviroment & Display Manager
+### Install Xorg & Desktop Enviroment & Display Manager
 
 1. 
    ```
-   sudo pacman -S xorg xorg-server nvidia-dkms libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
+   sudo pacman -S xorg xorg-server
    ```
 - example for a GUI: 
    ```
@@ -315,7 +318,7 @@ initrd /initramfs-linux.img
    ```
 - example for all packages:
    ```
-   sudo pacman -S flatpak dolphin mpv git fastfetch wget gedit fzf thermald zram-generator konsole plasma sddm xorg xorg-server nvidia-dkms libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
+   sudo pacman -S flatpak dolphin mpv git fastfetch wget gedit fzf thermald zram-generator konsole plasma sddm xorg xorg-server
    ```
 2. 
    ```

@@ -132,10 +132,6 @@ Otional Swap:
    ```
 4. 
    ```
-   lsblk
-   ```
-5. 
-   ```
    pacstrap /mnt base base-devel linux linux-firmware
    ```
    
@@ -151,17 +147,9 @@ Otional Swap:
    ```
 3. 
    ```
-   mkdir /mnt/boot/efi
-   ```  
+   mount /dev/sda1 /mnt/boot
+   ```
 4. 
-   ```
-   mount /dev/sda1 /mnt/boot/efi
-   ```
-5. 
-   ```
-   lsblk
-   ```
-6. 
    ```
    pacstrap /mnt base base-devel linux linux-firmware
    ```

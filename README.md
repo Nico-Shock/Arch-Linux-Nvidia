@@ -163,24 +163,28 @@ Otional Swap:
    ```
 6. 
    ```
-   pacstrap /mnt base base-devel linux linux-firmware nano networkmanager grub efibootmgr
+   pacstrap /mnt base base-devel linux linux-firmware
    ```
 
-## 7. Configure Fstab
+## 7. Install Required Packages
+
+1. sudo pacman -S networkmanager dhcpcd nano
+
+## 8. Configure Fstab
 
 1. 
    ```
    genfstab -U /mnt >> /mnt/etc/fstab
    ```
 
-## 7. Using the installed root system
+## 9. Using the installed root system
 
 1. 
    ```
    arch-chroot /mnt /bin/bash
    ```
 
-## 8. Install Bootloader
+## 10. Install Bootloader
 
 1. 
    ```
@@ -203,7 +207,7 @@ initrd /initramfs-linux.img
    echo "Options root=PARTUUID=$(blkid -s PARTUUID -o value /dev/sda3) rw" >> /boot/loader/entries
    ```
 
-## 9. Configure Arch
+## 10. Configure Arch
 
 1. 
    ```
@@ -275,7 +279,7 @@ initrd /initramfs-linux.img
     exit
     ```
 
-## 10. Finish Installation 
+## 11. Finish Installation 
 
 1. 
    ```
@@ -286,7 +290,7 @@ initrd /initramfs-linux.img
    reboot
    ```
 
-## 11. Set Up a New User
+## 12. Set Up a New User
 
 1. 
    ```
@@ -331,7 +335,7 @@ initrd /initramfs-linux.img
    ssh root@ipadress
    ```
 
-## 12. Install GUI
+## 13. Install GUI
 
 ### Install Xorg & Nvida Packages & Desktop Enviroment & Display Manager
 
@@ -444,7 +448,7 @@ Exec=/usr/bin/mkinitcpio -P
    sudo reboot
    ```
 
-## 13. Change Keyboard Layout
+## 14. Change Keyboard Layout
 
 1. 
    ```
@@ -459,7 +463,7 @@ Exec=/usr/bin/mkinitcpio -P
    sudo reboot
    ```
 
-## 14. Finalize Build
+## 15. Finalize Build
 
 1. Install Terminal via Discover/Software. (only if you doent installed "konsole" or "console" in the insterllation process)
 

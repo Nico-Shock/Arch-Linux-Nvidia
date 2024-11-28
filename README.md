@@ -136,7 +136,7 @@ Otional Swap:
    ```
 5. 
    ```
-   pacstrap /mnt base base-devel linux linux-firmware nano networkmanager grub
+   pacstrap /mnt base base-devel linux linux-firmware
    ```
    
 ### UEFI:

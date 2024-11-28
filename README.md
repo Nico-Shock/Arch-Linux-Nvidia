@@ -151,9 +151,24 @@ Otional Swap:
 
    ```
 1. sudo pacman -S networkmanager dhcpcd nano
+  
    ```
 
-## 10. Install Bootloader
+## 10. Configure Pacman:
+
+1. 
+   ```
+   sudo nano /etc/pacman.conf
+   ```
+   
+- search "multilib" -> remove "#" -> normal multilib not like multilib-testing + remove "#" -> include
+
+2. 
+   ```
+   sudo pacman -Sy
+   ```
+
+## 11. Install Bootloader
 
 1. 
    ```
@@ -175,12 +190,12 @@ initrd /initramfs-linux.img
     sudo pacman -S nvidia-dkms libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
    ```
 
-3. 
+4. 
    ```
    echo "Options root=PARTUUID=$(blkid -s PARTUUID -o value /dev/sda3) rw" >> /boot/loader/entries
    ```
 
-## 10. Configure Arch
+## 12. Configure Arch
 
  1. 
    ```
@@ -192,59 +207,48 @@ initrd /initramfs-linux.img
    ```
 3. 
    ```
-   sudo nano /etc/pacman.conf
-   ```
-   
-- search "multilib" -> remove "#" -> normal multilib not like multilib-testing + remove "#" -> include
-
-4. 
-   ```
-   sudo pacman -Sy
-   ```
-5. 
-   ```
    passwd
    ```
-6. 
+4. 
    ```
    nano /etc/locale.gen
    ```
    - Search for the language -> remove "#" from UTF and ISO.
 
-7. 
+5. 
    ```
    locale-gen
    ```
-8. 
+6. 
    ```
    nano /etc/locale.conf
    ```
    - `LANG=language` (name of the previously configured language).
 
-9. 
+7. 
     ```
     nano /etc/hostname
     ```
     - `type your pc name here`.
 
-10. 
+8. 
     ```
     ln -sf /usr/share/zoneinfo/ (TAB 1)
     ```
-11. 
+9. 
     ```
     ln -sf /usr/share/zoneinfo/region (TAB 2)
     ```
-12. 
+10. 
     ```
     ln -sf /usr/share/zoneinfo/region/city /etc/localtime
     ```
-13. 
+11. 
     ```
     exit
     ```
 
-## 11. Finish Installation 
+## 13. Finish Installation 
 
 1. 
    ```
@@ -255,7 +259,7 @@ initrd /initramfs-linux.img
    reboot
    ```
 
-## 12. Set Up a New User
+## 14. Set Up a New User
 
 1. 
    ```
@@ -300,7 +304,7 @@ initrd /initramfs-linux.img
    ssh root@ipadress
    ```
 
-## 13. Install GUI
+## 15. Install GUI
 ### Install Xorg & Desktop Enviroment & Display Manager
 
 1. 
@@ -412,7 +416,7 @@ Exec=/usr/bin/mkinitcpio -P
    sudo reboot
    ```
 
-## 14. Change Keyboard Layout
+## 16. Change Keyboard Layout
 
 1. 
    ```
@@ -427,7 +431,7 @@ Exec=/usr/bin/mkinitcpio -P
    sudo reboot
    ```
 
-## 15. Finalize Build
+## 17. Finalize Build
 
 1. Install Terminal via Discover/Software. (only if you doent installed "konsole" or "console" in the insterllation process)
 

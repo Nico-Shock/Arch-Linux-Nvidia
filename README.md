@@ -182,7 +182,7 @@ Otional Swap:
 
 1. 
    ```
-   bootctl --esp-path=/efi install
+   bootctl install
    ```
 2. 
    ```

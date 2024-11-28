@@ -190,9 +190,17 @@ Otional Swap:
 
 1. 
    ```
-   bootctl install
+   mkdir /boot/loader/
    ```
 2. 
+   ```
+   mkdir /boot/loader/entries/
+   ```
+3. 
+   ```
+   bootctl install
+   ```
+4. 
    ```
    nano /boot/loader/entries/arch.conf (name it what ever you want)
    ```
@@ -204,7 +212,7 @@ Linux /vmlinux-linux
 initrd /initramfs-linux.img
 ```
 
-3. 
+5. 
    ```
    echo "Options root=PARTUUID=$(blkid -s PARTUUID -o value /dev/sda3) rw" >> /boot/loader/entries
    ```
